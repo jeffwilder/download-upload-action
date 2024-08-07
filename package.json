@@ -9,23 +9,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "lint": "eslint 'src/**/*.{js,ts}?(x)' --fix",
-    "build": "ncc build src/index.ts --minify --v8-cache",
-    "prebuild": "run-s lint clean",
-    "prepare": "is-ci || husky install .husky"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "pretty-quick — staged"
-    ],
-    "*.ts": [
-      "eslint --fix"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "build": "ncc build src/index.ts --minify --v8-cache"
   },
   "license": "MIT",
   "author": {
@@ -40,8 +24,6 @@
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
     "@types/node": "^18.0.0",
     "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
@@ -56,7 +38,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.1",
     "is-ci": "^3.0.0",
-    "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1",
